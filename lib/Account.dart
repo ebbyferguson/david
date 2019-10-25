@@ -1,3 +1,4 @@
+import 'package:david/components/ResetPassword.dart';
 import 'package:flutter/material.dart';
 import 'components/CustomShapeClipper.dart';
 
@@ -9,6 +10,7 @@ class Account extends StatelessWidget {
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(color: Colors.white30),
           child: Stack(
             children: <Widget>[
               ClipPath(
@@ -39,9 +41,17 @@ class Account extends StatelessWidget {
                           width: 16.0,
                         ),
                         Spacer(),
-                        Icon(
-                          Icons.settings,
-                          color: Colors.white,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                                  return ResetPassword();
+                                }));
+                          },
+                          child: Icon(
+                            Icons.settings,
+                            color: Colors.white,
+                          ),
                         )
                       ],
                     ),

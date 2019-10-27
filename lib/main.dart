@@ -1,3 +1,4 @@
+import 'package:david/MainHome.dart';
 import 'package:david/Store.dart';
 import 'package:flutter/material.dart';
 
@@ -193,7 +194,7 @@ class MyAppState extends State<MyApp> {
                         onTap: () {
                           print('Login tapped');
                           Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return Store();
+                            return MainHome();
                           }));
                         },
                         child: Column(

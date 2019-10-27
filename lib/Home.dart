@@ -6,6 +6,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: Column(
           children: <Widget>[
             Flexible(

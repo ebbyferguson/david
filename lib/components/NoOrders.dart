@@ -1,12 +1,10 @@
+import 'package:david/Home.dart';
+import 'package:david/Store.dart';
+import 'package:david/components/StoreItem.dart';
 import 'package:david/main.dart';
 import 'package:flutter/material.dart';
 
-class ResetPassword extends StatefulWidget {
-  @override
-  _ResetPasswordState createState() => _ResetPasswordState();
-}
-
-class _ResetPasswordState extends State<ResetPassword> {
+class NoOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +30,14 @@ class _ResetPasswordState extends State<ResetPassword> {
                         onPressed: () {
                           Navigator.pop(context);
                         }),
+                    /*IconButton(
+                        icon: Icon(Icons.close),
+                        color: Colors.black,
+                        tooltip: 'Cancel',
+                        iconSize: 25.0,
+                        onPressed: () {
+                      Navigator.pop(context);
+                        }),*/
                   ],
                 ),
               ),
@@ -40,7 +46,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               ),
               Container(
                 child: Text(
-                  "Reset Password",
+                  "No Orders",
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.w700,
@@ -55,7 +61,7 @@ class _ResetPasswordState extends State<ResetPassword> {
               ),
               Container(
                 child: Text(
-                  "Change your password for this account",
+                  "Tap the button below to place a new order",
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.w500,
@@ -78,7 +84,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                   child: Center(
                       child: Icon(
-                    Icons.lock_outline,
+                    Icons.remove_shopping_cart,
                     size: 52,
                     color: Colors.black45,
                   )),
@@ -87,33 +93,15 @@ class _ResetPasswordState extends State<ResetPassword> {
               SizedBox(
                 height: 35,
               ),
-              Container(
-                margin: EdgeInsets.only(left: 40, right: 40),
-                child: TextField(
-                  obscureText: false,
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                  decoration: InputDecoration(
-                      focusColor: Colors.red,
-                      fillColor: Colors.black,
-                      border: UnderlineInputBorder(),
-                      focusedBorder: new UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red),
-                      ),
-                      labelText: 'Email',
-                      hoverColor: Colors.red),
-                ),
-              ),
               SizedBox(
                 height: 65,
               ),
               InkWell(
                   onTap: () {
-                    print('Reset tapped');
+                    print('Add Order tapped');
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return MyApp();
+                      return Store();
                     }));
                   },
                   child: Column(
@@ -137,7 +125,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                               width: 5,
                             ),
                             Text(
-                              "Reset",
+                              "Add Orders",
                               style: new TextStyle(
                                   fontSize: 18.0,
                                   color: Colors.white,
@@ -148,7 +136,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                               width: 5,
                             ),
                             Icon(
-                              Icons.arrow_forward,
+                              Icons.add_shopping_cart,
                               color: Colors.white,
                             )
                           ],

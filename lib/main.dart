@@ -1,5 +1,6 @@
 import 'package:david/MainHome.dart';
 import 'package:david/Store.dart';
+import 'package:david/components/ResetPassword.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -141,6 +142,32 @@ class MyAppState extends State<MyApp> {
                                 hoverColor: Colors.red),
                           ),
                         ),
+                        SizedBox(height: 10,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                      return ResetPassword();
+                                    }));
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Text(
+                                      "Forgot password?",
+                                      style: TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14.0,
+                                        color: Colors.red[500],
+                                      ),
+                                      textAlign: TextAlign.left,
+                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
                       ],
                     ),
                   ),

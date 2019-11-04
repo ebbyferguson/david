@@ -1,3 +1,4 @@
+import 'package:david/Cart.dart';
 import 'package:david/components/NoOrders.dart';
 import 'package:david/components/ResetPassword.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +137,12 @@ class Account extends StatelessWidget {
                               Material(
                                 color: Colors.white,
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return CartList();
+                                    }));
+                                  },
                                   child: Container(
                                     padding: EdgeInsets.only(top: 5, bottom: 5),
                                     child: Row(

@@ -1,4 +1,5 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:david/AllBrands.dart';
 import 'package:david/Home.dart';
 import 'package:david/Store.dart';
 import 'package:david/components/brand_item.dart';
@@ -98,6 +99,9 @@ class _MainHomeState extends State<MainHome> {
                   elevation: 4,
                   child: GestureDetector(
                     onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return AllBrands();
+                      }));
                     },
                     child: Container(
                       decoration: BoxDecoration(

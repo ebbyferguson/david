@@ -1,4 +1,5 @@
 import 'package:david/MainHome.dart';
+import 'package:david/Register.dart';
 import 'package:david/Store.dart';
 import 'package:david/components/ResetPassword.dart';
 import 'package:flutter/material.dart';
@@ -204,7 +205,7 @@ class MyAppState extends State<MyApp> {
                           onTap: () {
                             print("value of your text");
                             Navigator.push(context, MaterialPageRoute(builder: (context) {
-                              return Store();
+                              return Register();
                             }));
                           },
                         )

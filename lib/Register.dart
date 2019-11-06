@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'MainHome.dart';
+import 'RegistrationStepper.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -17,11 +18,12 @@ class _RegisterState extends State<Register> {
           builder: (context) =>
           SlidingUpPanel(
               isDraggable: false,
-              defaultPanelState: PanelState.CLOSED,
-              minHeight: MediaQuery.of(context).size.height * .7,
+              defaultPanelState: PanelState.OPEN,
+              maxHeight: MediaQuery.of(context).size.height * .7,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25)),
-              panel: Container(
+              panel: RegistrationStepper(),
+              /*Container(
                 padding: EdgeInsets.only(left: 30, right: 30, top: 30),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
@@ -164,25 +166,11 @@ class _RegisterState extends State<Register> {
                       InkWell(
                           onTap: () {
                             print('Registration tapped');
-//
-//                            final snackBar = SnackBar(
-//                              content: Text('Yay! A SnackBar!'),
-//                              action: SnackBarAction(
-//                                label: 'Undo',
-//                                onPressed: () {
-//                                  // Some code to undo the change.
-//                                },
-//                              ),
-//                            );
-//
-//                            // Find the Scaffold in the widget tree and use
-//                            // it to show a SnackBar.
-//                            Scaffold.of(context).showSnackBar(snackBar);
-//                          Navigator.push(context,
-//                              MaterialPageRoute(builder: (context) {
-//                                return MainHome();
-//                              }));
-                          _displaySnackBar(context, "This is a test");
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return NewRegistration();
+                              }));
+//                          _displaySnackBar(context, "This is a test");
                           },
                           child: Column(
                             children: <Widget>[
@@ -227,7 +215,7 @@ class _RegisterState extends State<Register> {
                     ],
                   ),
                 ),
-              ),
+              ),*/
               body: Container(
                 child: Stack(
                   children: <Widget>[
@@ -289,7 +277,6 @@ class _RegisterState extends State<Register> {
               )),
         ));
   }
-
 
   _displaySnackBar(BuildContext context, String text) {
     final snackBar = SnackBar(content: Text(text));

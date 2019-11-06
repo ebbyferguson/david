@@ -8,7 +8,7 @@ class RegistrationStepper extends StatefulWidget {
 
 class _RegistrationStepperState extends State<RegistrationStepper> {
   int _index = 0;
-  bool personalDetailsActive = false;
+  bool personalDetailsActive = true;
   bool addressDetailsActive = false;
 
   @override

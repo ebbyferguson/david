@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'MainHome.dart';
-import 'RegistrationStepper.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -19,203 +18,153 @@ class _RegisterState extends State<Register> {
           SlidingUpPanel(
               isDraggable: false,
               defaultPanelState: PanelState.OPEN,
-              maxHeight: MediaQuery.of(context).size.height * .7,
+              maxHeight: MediaQuery.of(context).size.height * .65,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25)),
-              panel: RegistrationStepper(),
-              /*Container(
-                padding: EdgeInsets.only(left: 30, right: 30, top: 30),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        "Personal Details",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12.0,
-                          color: Colors.red,
-                        ),
-                        textAlign: TextAlign.left,
+              panel:
+              Container(
+                margin: EdgeInsets.only(left: 30, right: 30, bottom: 20, top: 10),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      "Fill in the following details",
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14.0,
+                        color: Colors.red,
                       ),
-                      Container(
-                        padding: EdgeInsets.only(left: 15, right: 15),
-                        child: Column(
-                          children: <Widget>[
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'First Name',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Last Name',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Email',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Phone',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Password',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Confirm Password',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 40,),
-                      Text(
-                        "Address Details",
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12.0,
-                          color: Colors.red,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 15, right: 15),
-                        child: Column(
-                          children: <Widget>[
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Street Address',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'City',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'State',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            ),
-                            SizedBox(height: 5,),
-                            TextFormField(
-                              keyboardType: TextInputType.phone,
-                              autocorrect: false,
-                              maxLines: 1,
-                              decoration: new InputDecoration(
-                                  labelText: 'Zip',
-                                  labelStyle: new TextStyle(
-                                      decorationStyle: TextDecorationStyle.solid)),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: 40,),
-                      InkWell(
-                          onTap: () {
-                            print('Registration tapped');
+                      textAlign: TextAlign.left,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      autocorrect: false,
+                      maxLines: 1,
+                      decoration: new InputDecoration(
+                          labelText: 'First Name',
+                          labelStyle: new TextStyle(
+                              decorationStyle:
+                              TextDecorationStyle.solid)),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      autocorrect: false,
+                      maxLines: 1,
+                      decoration: new InputDecoration(
+                          labelText: 'Last Name',
+                          labelStyle: new TextStyle(
+                              decorationStyle:
+                              TextDecorationStyle.solid)),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      autocorrect: false,
+                      maxLines: 1,
+                      decoration: new InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: new TextStyle(
+                              decorationStyle:
+                              TextDecorationStyle.solid)),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      autocorrect: false,
+                      maxLines: 1,
+                      decoration: new InputDecoration(
+                          labelText: 'Phone',
+                          labelStyle: new TextStyle(
+                              decorationStyle:
+                              TextDecorationStyle.solid)),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      autocorrect: false,
+                      maxLines: 1,
+                      decoration: new InputDecoration(
+                          labelText: 'Password',
+                          labelStyle: new TextStyle(
+                              decorationStyle:
+                              TextDecorationStyle.solid)),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.phone,
+                      autocorrect: false,
+                      maxLines: 1,
+                      decoration: new InputDecoration(
+                          labelText: 'Confirm Password',
+                          labelStyle: new TextStyle(
+                              decorationStyle:
+                              TextDecorationStyle.solid)),
+                    ),
+                    SizedBox(height: 30,),
+                    InkWell(
+                        onTap: () {
+                          print('Registration tapped');
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return NewRegistration();
+                                return MainHome();
                               }));
 //                          _displaySnackBar(context, "This is a test");
-                          },
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 15),
-                                margin: EdgeInsets.symmetric(vertical: 0),
-                                width: 295.0,
-                                height: 64.0,
-                                decoration: new BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: new BorderRadius.circular(50.0),
+                        },
+                        child: Column(children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 15),
+                            margin: EdgeInsets.symmetric(vertical: 0),
+                            width: 255.0,
+                            height: 64.0,
+                            decoration: new BoxDecoration(
+                              color: Colors.red,
+                              borderRadius:
+                              new BorderRadius.circular(50.0),
+                            ),
+                            child: Row(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceAround,
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 20,
                                 ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      "Register",
-                                      style: new TextStyle(
-                                          fontSize: 18.0,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500),
-                                      textAlign: TextAlign.end,
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward,
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "Register",
+                                  style: new TextStyle(
+                                      fontSize: 18.0,
                                       color: Colors.white,
-                                    )
-                                  ],
+                                      fontWeight: FontWeight.w500),
+                                  textAlign: TextAlign.end,
                                 ),
-                              ),
-                            ],
-                          ))
-                    ],
-                  ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                )
+                              ],
+                            ),
+                          )
+                        ]))
+                  ],
                 ),
-              ),*/
+              ),
+//              RegistrationStepper(),
               body: Container(
                 child: Stack(
                   children: <Widget>[
